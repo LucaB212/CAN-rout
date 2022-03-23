@@ -18,22 +18,18 @@ global timestamp
 global infoMessage
 global dataLogger
 
-if sys.argv[1]:
-    db_level = sys.argv[1]
-else:
-    db_level = 'ERROR'
+
 
 
 #### INITIALIZATION  ####
 #data_list = []
 
-handler = RotatingFileHandler("canrout.log", mode='a', maxBytes=100000, backupCount=1)
-logging.basicConfig(format='%(asctime)s - %(funcName)s - %(message)s', level=db_level, handlers=[handler])
+
 telem_buff = Queue()        # used for event with satus code E003
 state_buff = Queue()        # used for event with status code E000
 canSend_ordered = PriorityQueue()
 
-confFilename = "CAN-rout-conf.json"
+
 none = 0
 statistics = 4
 count = 8
@@ -630,6 +626,18 @@ def byteArrayProducer(msg):
 
 
 if __name__ == "__main__":
+
+    ############## LOCAL INITIALIZATION #################
+    if len(sys.argv) > 1:
+        db_level = sys.argv[1]
+    else:
+        db_level = 'INFO'
+
+    handler = RotatingFileHandler("canrout.log", mode='a', maxBytes=100000, backupCount=1)
+    logging.basicConfig(format='%(asctime)s - %(funcName)s - %(message)s', level=db_level, handlers=[handler])
+
+    confFilename = "CAN-rout-conf.json"
+    #####################################################
 
     data_router_dict = conf_extract()
     #print("data router dict: {}".format(data_router_dict))
