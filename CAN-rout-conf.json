@@ -1,0 +1,1197 @@
+{
+	"0CFFA000": [
+					{
+						"type": ["min","max","val_16","med","rms"],
+						"name": "PTT",
+						"id": [173, 255, 255],
+						"dlc": 4,
+						"packs": 3,
+						"res_mask_B": 7962489,
+						"group": 5,
+						"item_code": 100
+					},
+					{
+						"type": ["min","max","val_16","med","rms"],
+						"name": "PLT",
+						"id": [172, 255, 255],
+						"dlc": 4,
+						"packs": 3,
+						"res_mask_B": 7962489,
+						"group": 5,
+						"item_code": 99
+					},
+					1
+				],
+	"18FF0300": [
+					{
+						"type": ["cnt","varz","val_8"],
+						"name": "MO",
+						"id": [113, 74, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 5,
+						"item_code": 70
+					},
+					{
+						"type": ["cnt","varz","val_8"],
+						"name": "SC",
+						"id": [121, 66, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 5,
+						"item_code": 71
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "SUP",
+						"id": [121, 67, 255],
+						"dlc": 11,
+						"packs": 2,
+						"res_mask_B": 280,
+						"cnt": 3,
+						"group": 2,
+						"item_code": 67
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "SIC",
+						"id": [171, 255, 255],
+						"dlc": 11,
+						"packs": 2,
+						"res_mask_B": 280,
+						"cnt": 3,
+						"group": 2,
+						"item_code": 98
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "SP",
+						"id": [82, 255, 255],
+						"dlc": 11,
+						"packs": 2,
+						"res_mask_B": 280,
+						"cnt": 3,
+						"group": 2,
+						"item_code": 95
+					},
+					{
+						"type": []
+					},
+					1
+				],
+	"18FF0700": [
+					{
+						"type": ["min","max","val_16","med","rms"],
+						"name": "IS",
+						"id": [38, 255, 255],
+						"dlc": 16,
+						"packs": 3,
+						"res_mask_B": 67329,
+						"group": 4,
+						"item_code": 93
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "SBS",
+						"id": [121, 70, 255],
+						"dlc": 11,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 3,
+						"group": 66,
+						"item_code": 66
+					},
+					{
+						"type": []
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "SRM",
+						"id": [48, 255, 255],
+						"dlc": 11,
+						"packs": 2,
+						"res_mask_B": 280,
+						"cnt": 3,
+						"group": 2,
+						"item_code": 69
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "SSM",
+						"id": [37, 255, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 96,
+						"item_code": 96
+					},
+					1
+				],
+	"18FF0B00": [
+					{
+						"type": ["min","max","val_16","med","rms"],
+						"name": "AB",
+						"id": [40, 255, 255],
+						"dlc": 16,
+						"packs": 3,
+						"res_mask_B": 67329,
+						"group": 4,
+						"item_code": 88
+					},
+					{
+						"type": []
+					},
+					{
+						"type": []
+					},
+					{
+						"type": ["min","max","val_16","med","rms"],
+						"name": "PB",
+						"id": [121, 78, 255],
+						"dlc": 16,
+						"packs": 3,
+						"res_mask_B": 67329,
+						"group": 4,
+						"item_code": 92
+					},
+					1
+				],
+	"18FF0E00":	[
+					{
+						"type": []
+					},
+					{
+						"type": []
+					},
+					{
+						"type": []
+					},
+					{
+						"type": ["min","max","val_16","med","rms"],
+						"name": "SB",
+						"id": [39, 255, 255],
+						"dlc": 16,
+						"packs": 3,
+						"res_mask_B": 67329,
+						"group": 4,
+						"item_code": 89
+					},
+					1
+				],
+	"18FF0F00":	[
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "ASAD",
+						"id": [70, 255, 255],
+						"dlc": 11,
+						"packs": 2,
+						"res_mask_B": 280,
+						"cnt": 3,
+						"group": 3,
+						"item_code": 77
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "ASAS",
+						"id": [67, 255, 255],
+						"dlc": 11,
+						"packs": 2,
+						"res_mask_B": 280,
+						"cnt": 3,
+						"group": 3,
+						"item_code": 76
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "ASPD",
+						"id": [69, 255, 255],
+						"dlc": 11,
+						"packs": 2,
+						"res_mask_B": 280,
+						"cnt": 3,
+						"group": 3,
+						"item_code": 78
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "ASPS",
+						"id": [68, 255, 255],
+						"dlc": 11,
+						"packs": 2,
+						"res_mask_B": 280,
+						"cnt": 3,
+						"group": 3,
+						"item_code": 79
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "ARAD",
+						"id": [187, 255, 255],
+						"dlc": 11,
+						"packs": 2,
+						"res_mask_B": 280,
+						"cnt": 3,
+						"group": 3,
+						"item_code": 73
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "ARAS",
+						"id": [187, 255, 255],
+						"dlc": 11,
+						"packs": 2,
+						"res_mask_B": 280,
+						"cnt": 3,
+						"group": 3,
+						"item_code": 72
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "ARPD",
+						"id": [187, 255, 255],
+						"dlc": 11,
+						"packs": 2,
+						"res_mask_B": 280,
+						"cnt": 3,
+						"group": 3,
+						"item_code": 74
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "ARPS",
+						"id": [187, 255, 255],
+						"dlc": 11,
+						"packs": 2,
+						"res_mask_B": 280,
+						"cnt": 3,
+						"group": 3,
+						"item_code": 75
+					},
+					{
+						"type": ["val_imm"],
+						"name": "INFO2",
+						"start": 1,
+						"len": 2,
+						"item_code": 85
+					},
+					{
+						"type": ["val_imm"],
+						"name": "INFO2",
+						"start": 0,
+						"len": 2,
+						"item_code": 84
+					},
+					{
+						"type": ["val_imm"],
+						"name": "INFO2",
+						"start": 4,
+						"len": 2,
+						"item_code": 86
+					},
+					{
+						"type": ["val_imm"],
+						"name": "INFO2",
+						"start": 2,
+						"len": 2,
+						"item_code": 87
+					},
+					1
+				],
+	"18FF1100":	[
+					{
+						"type": ["min","max","val_16","med","rms"],
+						"name": "AZ",
+						"id": [168, 255, 255],
+						"dlc": 16,
+						"packs": 3,
+						"res_mask_B": 67329,
+						"group": 4,
+						"item_code": 91
+					},
+					1
+				],
+	"18FF1200":	[
+					{
+						"type": []
+					},
+					{
+						"type": []
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "RM",
+						"id": [121, 64, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 21
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "BS",
+						"id": [121, 65, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 18
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "SA",
+						"id": [182, 255, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 20
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "UP",
+						"id": [161, 255, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 19
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "PZF",
+						"id": [164, 255, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 34
+					},
+					1		
+				],
+	"18FF1F00": [
+					{
+						"type": ["min","max","val_16","med","rms"],
+						"name": "GM",
+						"id": [121, 35, 255],
+						"dlc": 16,
+						"packs": 3,
+						"res_mask_B": 67329,
+						"group": 4,
+						"item_code": 35
+					},
+					{
+						"type": ["min","max","val_16","med","rms"],
+						"name": "CI",
+						"id": [121, 36, 255],
+						"dlc": 16,
+						"packs": 3,
+						"res_mask_B": 67329,
+						"group": 4,
+						"item_code": 37
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "SM",
+						"id": [86, 255, 255],
+						"dlc": 11,
+						"packs": 2,
+						"res_mask_B": 280,
+						"cnt": 3,
+						"group": 2,
+						"item_code": 59
+					},
+					{
+						"type": ["val_imm"],
+						"name": "INFO3",
+						"start": 1,
+						"len": 8,
+						"item_code": 39
+					},
+					1
+				],
+	"18FF2600": [
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "AM",
+						"id": [121, 38, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 51
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "POM",
+						"id": [127, 255, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 52
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "SPTLR",
+						"id": [121, 39, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 53
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "CND",
+						"id": [121, 40, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 54
+					},
+					{
+						"type": ["val_imm"],
+						"name": "INFO3",
+						"start": 3,
+						"len": 3,
+						"item_code": 57
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "ALT",
+						"id": [121, 255, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 55
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "LLR",
+						"id": [126, 255, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 13
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "SPAG",
+						"id": [125, 255, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 31
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "TAI",
+						"id": [121, 42, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 14
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "FAI",
+						"id": [123, 255, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 11
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "RDPF",
+						"id": [121, 43, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 24
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "IRDPF",
+						"id": [121, 44, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 25
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "TSE",
+						"id": [121, 45, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 26
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "MLSE",
+						"id": [121, 46, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 27
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "MNSE",
+						"id": [121, 47, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 28
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "QU",
+						"id": [121, 48, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 29
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "SPLU",
+						"id": [121, 49, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 30
+					},
+					{
+						"type": []
+					},
+					1		
+				],
+	"18FF2900": [
+					{
+						"type": ["val_imm"],
+						"name": "INFO3",
+						"start": 0,
+						"len": 8,
+						"item_code": 38
+					},
+					{
+						"type": ["min","max","val_16","med","rms"],
+						"name": "TLR",
+						"id": [121, 50, 255],
+						"dlc": 16,
+						"packs": 3,
+						"res_mask_B": 67329,
+						"group": 4,
+						"item_code": 40
+					},
+					{
+						"type": ["min","max","val_16","med","rms"],
+						"name": "TA",
+						"id": [121, 51, 255],
+						"dlc": 16,
+						"packs": 3,
+						"res_mask_B": 67329,
+						"group": 4,
+						"item_code": 63
+					},
+					1
+				],
+	"18FF3500": [
+					{
+						"type": ["val_imm"],
+						"name": "INFO2",
+						"start": 6,
+						"len": 8,
+						"item_code": 41
+					},
+					{
+						"type": ["min","max","val_16","med","rms"],
+						"name": "PAM",
+						"id": [178, 255, 255],
+						"dlc": 16,
+						"packs": 3,
+						"res_mask_B": 67329,
+						"group": 4,
+						"item_code": 60
+					},
+					{
+						"type": []
+					},
+					1
+				],
+	"18FF4700": [
+					{
+						"type": ["val_imm"],
+						"name": "INFO2",
+						"start": 8,
+						"len": 16,
+						"item_code": 8
+					},
+					1
+				],
+	"18FF5D00": [
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "IDRZ",
+						"id": [121, 94, 255],
+						"dlc": 11,
+						"packs": 2,
+						"res_mask_B": 280,
+						"cnt": 3,
+						"group": 2,
+						"item_code": 45
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "IDRZR",
+						"id": [121, 95, 255],
+						"dlc": 11,
+						"packs": 2,
+						"res_mask_B": 280,
+						"cnt": 3,
+						"group": 2,
+						"item_code": 46
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "FANB",
+						"id": [121, 96, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 47
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "FABB",
+						"id": [121, 97, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 48
+					},
+					{
+						"type": []
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "TNA",
+						"id": [121, 99, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 49
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "SGRN",
+						"id": [121, 100, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 50
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "FST",
+						"id": [124, 255, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 56
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "FRN",
+						"id": [121, 101, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 32
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "GRF",
+						"id": [121, 102, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 33
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "PS",
+						"id": [121, 103, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 22
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "RF",
+						"id": [121, 104, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 12
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "SS",
+						"id": [162, 255, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 23
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "BDR",
+						"id": [121, 109, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 10
+					},
+					{
+						"type": []
+					},
+					1
+				],
+	"18FF6400":	[
+					{
+						"type": []
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "MOC",
+						"id": [174, 255, 255],
+						"dlc": 11,
+						"packs": 2,
+						"res_mask_B": 280,
+						"cnt": 3,
+						"group": 101,
+						"item_code": 101
+					},
+					1
+				],
+	"18FF6500": [
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "AS",
+						"id": [169, 255, 255],
+						"dlc": 11,
+						"packs": 2,
+						"res_mask_B": 280,
+						"cnt": 3,
+						"group": 2,
+						"item_code": 97
+					},
+					1
+				],
+	"18FF6A4D": [
+					{
+						"type": ["val_imm"],
+						"name": "INFO3",
+						"start": 5,
+						"len": 32,
+						"position": [0,32],
+						"item_code": 44
+					},
+					1
+				],
+	"18FF8100": [
+					{
+						"type": ["min","max","val_16","med","rms"],
+						"name": "AT",
+						"id": [41, 255, 255],
+						"dlc": 16,
+						"packs": 3,
+						"res_mask_B": 67329,
+						"group": 4,
+						"item_code": 90
+					},					
+					1
+				],
+	"18FFA300": [
+					{
+						"type": []
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "PFR",
+						"id": [188, 255, 255],
+						"dlc": 11,
+						"packs": 2,
+						"res_mask_B": 280,
+						"cnt": 3,
+						"group": 61,
+						"item_code": 61
+					},
+					{
+						"type": ["min","max","val_16","med","rms"],
+						"name": "PINCH",
+						"id": [121, 54, 255],
+						"dlc": 16,
+						"packs": 3,
+						"res_mask_B": 67329,
+						"group": 4,
+						"item_code": 62
+					},
+					1
+				],
+	"18FFD500": [
+					{
+						"type": []
+					},
+					{
+						"type": []
+					},
+					{
+						"type": []
+					},
+					{
+						"type": []
+					},
+					{
+						"type": ["min","max","val_16","med","rms"],
+						"name": "GPTO",
+						"id": [121, 60, 255],
+						"dlc": 16,
+						"packs": 3,
+						"res_mask_B": 67329,
+						"group": 4,
+						"item_code": 36
+					},
+					{
+						"type": []
+					},
+					1
+				],
+	"18FFFF91": [
+					{
+						"type": ["val_imm"],
+						"name": "INFO1",
+						"start": 1,
+						"len": 16,
+						"item_code": 81
+					},
+					1
+				],
+	"18FFFF92": [
+					{
+						"type": ["val_imm"],
+						"name": "INFO1",
+						"start": 0,
+						"len": 16,
+						"item_code": 80
+					},
+					1
+				],
+	"18FFFF93": [
+					{
+						"type": ["val_imm"],
+						"name": "INFO1",
+						"start": 2,
+						"len": 16,
+						"item_code": 82
+					},
+					1
+				],
+	"18FFFF94": [
+					{
+						"type": ["val_imm"],
+						"name": "INFO1",
+						"start": 3,
+						"len": 16,
+						"item_code": 83
+					},
+					1
+				],
+	"18FF1700": [
+					{
+						"type": ["val_imm"],
+						"name": "INFO3",
+						"start": 2,
+						"len": 12,
+						"item_code": 94
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "SSA",
+						"id": [121, 34, 255],
+						"dlc": 11,
+						"packs": 2,
+						"res_mask_B": 280,
+						"cnt": 3,
+						"group": 2,
+						"item_code": 68
+					},
+					1
+				],
+	"18FF3F00":	[
+					{
+						"type": ["val_imm"],
+						"name": "INFO2",
+						"start": 7,
+						"len": 16,
+						"item_code": 58
+
+					},
+					{
+						"type": ["cnt","varz","val_8"],
+						"name": "STC",
+						"id": [121, 86, 255],
+						"dlc": 17,
+						"packs": 3,
+						"res_mask_B": 65888,
+						"cnt": 6,
+						"group": 42,
+						"item_code": 42
+					},
+					{
+						"type": ["cnt","varz","val_8"],
+						"name": "DRZM",
+						"id": [121, 87, 255],
+						"dlc": 11,
+						"packs": 2,
+						"res_mask_B": 280,
+						"cnt": 3,
+						"group": 43,
+						"item_code": 43
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "LOI",
+						"id": [120, 255, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 16
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "TOI",
+						"id": [122, 255, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 17
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "MSF",
+						"id": [160, 255, 255],
+						"dlc": 13,
+						"packs": 2,
+						"res_mask_B": 256,
+						"cnt": 4,
+						"group": 1,
+						"item_code": 15
+					},
+					{
+						"type": ["cnt","attv","val_8"],
+						"name": "SSC",
+						"id": [163, 255, 255],
+						"dlc": 11,
+						"packs": 2,
+						"res_mask_B": 280,
+						"cnt": 3,
+						"group": 3,
+						"item_code": 65
+					},
+					{
+						"type": ["min","max","val_16","med","rms"],
+						"name": "TO",
+						"id": [121, 90, 255],
+						"dlc": 16,
+						"packs": 3,
+						"res_mask_B": 67329,
+						"group": 4,
+						"item_code": 64
+					},
+  		            {
+                         "type": []
+                    },
+                    {
+                         "type": []
+                    },
+					1		
+				],
+	"DTLOG": 	[
+					{
+						"byte": [0,2],
+						"fromBit": 0,
+						"toBit": 16,
+						"name": "STAB1",
+						"start": 4,
+						"item_code": 90
+					},
+					{
+						"byte": [4,5],
+						"fromBit": 0,
+						"toBit": 2,
+						"name": "STAB1",
+						"start": 1,
+						"item_code": 68
+					},
+					{
+						"byte": [20,22],
+						"fromBit": 0,
+						"toBit": 11,
+						"name": "STAB1",
+						"start": 6,
+						"item_code": 93
+					},
+					{
+						"byte": [21,22],
+						"fromBit": 5,
+						"toBit": 8,
+						"name": "STAB1",
+						"start": 0,
+						"item_code": 66
+					},					
+					{
+						"byte": [23,24],
+						"fromBit": 6,
+						"toBit": 8,
+						"name": "STAB1",
+						"start": 2,
+						"item_code": 69
+					},
+					{
+						"byte": [25,27],
+						"fromBit": 0,
+						"toBit": 16,
+						"name": "STAB2",
+						"start": 0,
+						"item_code": 88
+					},
+					{
+						"byte": [31,33],
+						"fromBit": 0,
+						"toBit": 16,
+						"name": "STAB2",
+						"start": 2,
+						"item_code": 92
+					},
+					{
+						"byte": [37,39],
+						"fromBit": 0,
+						"toBit": 16,
+						"name": "STAB2",
+						"start": 1,
+						"item_code": 89
+					}
+				],
+	"INFO1": 	{
+					"can_id": "18FF10FE",
+					"data_list": ["1111111111111111","1111111111111111","1111111111111111","1111111111111111"],
+					"infoMessage": 0,
+					"priority": 1
+				},
+	"INFO2":	{
+					"can_id": "18FF20FE",
+					"data_list": ["11","11","11","11","11","111111","11111111","1111111111111111","1111111111111111","11111111"],
+					"infoMessage": 1,
+					"priority": 1
+				},
+	"INFO3":	{
+					"can_id": "18FF30FE",
+					"data_list": ["11111111","11111111","111111111111","111","1","11111111111111111111111111111111"],
+					"infoMessage": 2,
+					"priority": 1
+				},
+	"DT"	:	{
+					"can_id": "18FFE6FE",
+					"priority": 2,
+					"item_code": 1
+				},
+	"LATLON":	{
+					"can_id": "18FF40FE",
+					"priority": 2,
+					"item_code": 2.3
+				},
+	"STAB1": 	{
+					"can_id": "18FF01FE",
+					"data_list": ["111","11","11","1","11111111111111111","1111111111111111","11111111111","1111111111111"],
+					"dataLogger": 0,
+					"priority": 0
+				},
+	"STAB2": 	{
+					"can_id": "18FF02FE",
+					"data_list": ["1111111111111111", "1111111111111111", "1111111111111111", "1111111111111111"],
+					"dataLogger": 1,
+					"priority": 0
+				},
+ 	"INFO": [[],[],[]],
+ 	"LOG": [[],[]]
+}
