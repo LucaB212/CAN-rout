@@ -16,6 +16,7 @@ global lonlat
 global timestamp
 
 global infoMessage
+global dataLogger
 
 if sys.argv[1]:
     db_level = sys.argv[1]
@@ -43,7 +44,7 @@ activations = 64
 
 lastid = -1
 fifo_path = "/temp/sybok/events"
-fifoDL_path = "/temp/sybok/"
+fifoDL_path = "/temp/sybok/datalog"
 
 
 
@@ -61,6 +62,7 @@ canId_DTTP = 0x18EB00FE
 CMTP_header = [0xA5, 0x5A]
 
 infoMessage_name = ["INFO1","INFO2","INFO3"]    #message name to be considered as Info. Add here new names. This structure follow the "INFO"
+dataLogger_name = ["STAB1","STAB2"]                  #message name to be considered as DataLogger.
 
 lonlat = "0000000000000000"
 timestamp = "00000000"
@@ -169,21 +171,55 @@ def eventManager(buff_3, buff_0):       ### added event for start the timer
                     else :   
                         lastid = idOfPacket
 
-def dataLoggerManager(buff,):
+def dataLoggerManager(data_router_dict):
     #### THREAD FUNCTION ###
     '''This function takes the packet from the datalogger and produces the stats'''
     logging.info("Thread start")
     #print("Thread 7 start")
 
+    global dataLogger
 
-    while True:
+    with open(fifoDL_path) as pipein:
+        logline = ""
+        
+        while len(logline) != 140:
+            logline = pipein.readline()[:-1]
 
-        with open(fifoDL_path) as pipein:
+        logging.debug("Buffer: {}".format(logline))
 
-            for event in pipein:
+        logline_split = logline.split(',')
 
-                print("Datalogger : {}".format(event))
-                
+        for packet in data_router_dict["DTLOG"]:
+                                 
+            buff = ""
+            for byte in logline_split[packet["byte"][0]:packet["byte"][1]]:
+                buff += byte
+            size = len(buff) << 2
+
+            buff = format(int(buff, base=16), '0>{}b'.format(size))
+            data = buff[packet["fromBit"]:packet["toBit"]]
+
+            logging.debug("Data extracted: {} from {} with size: {}".format(data,packet["byte"], size))
+
+            try:
+                dataLogger[data_router_dict[packet["name"]]["dataLogger"]][packet["start"]] = data
+            except IndexError:
+                dataLogger[data_router_dict[packet["name"]]["dataLogger"]] = data_router_dict[packet["name"]]["data_list"]
+                dataLogger[data_router_dict[packet["name"]]["dataLogger"]][packet["start"]] = data
+
+        for i in range(len(dataLogger)):
+
+            buff = ""
+        
+            for elem in dataLogger[i]:
+                buff += elem
+            
+            
+            if len(buff):
+                logging.debug("<<{} buffer  {}>>".format(i,buff))
+                #print("specialMessageSender -> buff: {}".format(buff))  
+                canSend_ordered.put((data_router_dict[dataLogger_name[i]]["priority"],[(int(data_router_dict[dataLogger_name[i]]["can_id"],base=16),byteArrayProducer(format(int(buff,base=2),'0>16x')))]))
+                dataLogger[i] = data_router_dict[dataLogger_name[i]]["data_list"]
 
 
 
@@ -599,6 +635,8 @@ if __name__ == "__main__":
     #print("data router dict: {}".format(data_router_dict))
 
     infoMessage = data_router_dict["INFO"]          ## this is the structure used with an empty list of list
+    dataLogger = data_router_dict["LOG"]
+
 
     with can.interfaces.socketcan.SocketcanBus(channel="can1", receive_own_messages=False, fd=False) as bus:
         logging.info("SocketcanBus open on channel <<can1>>")
@@ -621,6 +659,8 @@ if __name__ == "__main__":
         thread5.start()
         thread6 = threading.Thread(target=stateVehicle, args=(state_buff, data_router_dict, infoMessageLock, infoFirstEvent,), daemon=True)
         thread6.start()
+        thread7 = threading.Timer(function=dataLoggerManager, args=(data_router_dict,), interval=2.5)
+        thread7.start()
 
         
 
@@ -651,6 +691,10 @@ if __name__ == "__main__":
             if not thread6.is_alive():
                 thread6 = threading.Thread(target=stateVehicle, args=(state_buff, data_router_dict, infoMessageLock, infoFirstEvent,), daemon=True)
                 thread6.start()
+
+            if not thread7.is_alive(): 
+                thread7 = threading.Timer(function=dataLoggerManager, args=(data_router_dict,), interval=2.5)
+                thread7.start()
 
             time.sleep(1)
 
