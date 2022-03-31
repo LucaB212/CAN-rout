@@ -192,7 +192,7 @@ def dataLoggerManager(data_router_dict):
                 buff += byte
             size = len(buff) << 2
 
-            buff = format(int(buff, base=16), '0>{}b'.format(size))
+            buff = format(int(swap_byte_order_tostr(buff), base=16), '0>{}b'.format(size))
             data = buff[packet["fromBit"]:packet["toBit"]]
 
             logging.debug("Data extracted: {} from {} with size: {}".format(data,packet["byte"], size))
@@ -214,7 +214,7 @@ def dataLoggerManager(data_router_dict):
             if len(buff):
                 logging.debug("<<{} buffer  {}>>".format(i,buff))
                 #print("specialMessageSender -> buff: {}".format(buff))  
-                canSend_ordered.put((data_router_dict[dataLogger_name[i]]["priority"],[(int(data_router_dict[dataLogger_name[i]]["can_id"],base=16),byteArrayProducer(format(int(buff,base=2),'0>16x')))]))
+                canSend_ordered.put((data_router_dict[dataLogger_name[i]]["priority"],[(int(data_router_dict[dataLogger_name[i]]["can_id"],base=16),swap_byte_order_tolist(format(int(buff,base=2),'0>16x')))]))
                 dataLogger[i] = data_router_dict[dataLogger_name[i]]["data_list"]
 
 
@@ -380,15 +380,15 @@ def telemVehicle(telem_buff, data_router_dict, canSend_ordered, lock, infoFirstE
                         #logging.info("New infomessage added")
                         #print("val_imm condition passed")
 
-                        last_value_b = format((last_value[0] * 256 + last_value[1]), '0>{}b'.format(data_router_dict[can_id][var]["len"]))
+                        last_value_b = format((last_value[1] * 256 + last_value[0]), '0>{}b'.format(data_router_dict[can_id][var]["len"]))  #moltiplicavo il byte 0 *256 anche se il peso reale sarebbe 0 perchè lo consideravo già girato
 
                         with lock:
                             logging.info("Lock acquire for\t<<INFOMESSAGE  {}>>\t<<POSITION  {}>>".format(data_router_dict[can_id][var]["name"], data_router_dict[can_id][var]["start"]))
                             try:
-                                infoMessage[data_router_dict[data_router_dict[can_id][var]["name"]]["infoMessage"]][data_router_dict[can_id][var]["start"]] = last_value_b[-data_router_dict[can_id][var]["len"]:]
+                                infoMessage[data_router_dict[data_router_dict[can_id][var]["name"]]["infoMessage"]][data_router_dict[can_id][var]["start"]] = last_value_b[:data_router_dict[can_id][var]["len"]]
                             except IndexError:
                                 infoMessage[data_router_dict[data_router_dict[can_id][var]["name"]]["infoMessage"]] = data_router_dict[data_router_dict[can_id][var]["name"]]["data_list"]
-                                infoMessage[data_router_dict[data_router_dict[can_id][var]["name"]]["infoMessage"]][data_router_dict[can_id][var]["start"]] = last_value_b[-data_router_dict[can_id][var]["len"]:]
+                                infoMessage[data_router_dict[data_router_dict[can_id][var]["name"]]["infoMessage"]][data_router_dict[can_id][var]["start"]] = last_value_b[:data_router_dict[can_id][var]["len"]]
 
                             if not infoFirstEvent.is_set():
                                 infoFirstEvent.set()    #notify the specialMessageSender that one field in the infoMessage struct has been filled
@@ -396,8 +396,8 @@ def telemVehicle(telem_buff, data_router_dict, canSend_ordered, lock, infoFirstE
                     else:
 
                         canSendBuff.append((canId_CMTP,(CMTP_header + 
-                                                        swap_byte_order(format(data_router_dict[can_id][var]["dlc"], '0>4X')) + 
-                                                        swap_byte_order(format(data_router_dict[can_id][var]["packs"], '0>2X')) + 
+                                                        swap_byte_order_tolist(format(data_router_dict[can_id][var]["dlc"], '0>4X')) + 
+                                                        swap_byte_order_tolist(format(data_router_dict[can_id][var]["packs"], '0>2X')) + 
                                                         data_router_dict[can_id][var]["id"])))
 
                         logging.debug("<<canSendBuff inserted  {}>>".format(canSendBuff))
@@ -491,8 +491,8 @@ def stateVehicle(state_buff, data_router_dict, lock, infoFirstEvent):
         if can_id in data_router_dict.keys():       
             ###Check if the can id is present in the configuration file
 
-            last_value_b = format(int(msg[8:], base=16), '0>64b')
-            last_value_b = last_value_b[data_router_dict[can_id][0]["position"][0]:data_router_dict[can_id][0]["position"][1]]
+            last_value_b = format(int(swap_byte_order_tostr(msg[8:]), base=16), '0>64b')
+            last_value_b = last_value_b[data_router_dict[can_id][0]["position"][0]:data_router_dict[can_id][0]["position"][1]]  ## position of the data array in BIG-endian!!
             #logging.info("New infomessage added")
 
             logging.debug("<<Last value  {}".format(last_value_b))
@@ -523,8 +523,8 @@ def latlontimeSender(data_router_dict, buff):
     logging.debug("Prepared message\n\t\t<<LONLAT  {}>>\t<<DATE&TIME  {}>>".format(lonlat, data_date))
     #print("lonlat: {}".format(lonlat))
     #print("date and time: {}".format(data_date))
-    buff.put((data_router_dict["DT"]["priority"],[(int(data_router_dict["DT"]["can_id"],base=16), swap_byte_order(data_date))]))          
-    buff.put((data_router_dict["LATLON"]["priority"],[(int(data_router_dict["LATLON"]["can_id"],base=16), swap_byte_order(lonlat))]))        
+    buff.put((data_router_dict["DT"]["priority"],[(int(data_router_dict["DT"]["can_id"],base=16), swap_byte_order_tolist(data_date))]))          
+    buff.put((data_router_dict["LATLON"]["priority"],[(int(data_router_dict["LATLON"]["can_id"],base=16), swap_byte_order_tolist(lonlat))]))        
 
 def specialMessageSender(data_router_dict, canSend_ordered, firstevent, lock):
     ### THREAD FUNCTION ###
@@ -553,31 +553,31 @@ def specialMessageSender(data_router_dict, canSend_ordered, firstevent, lock):
             if len(buff):
                 logging.debug("<<{} buffer  {}>>".format(i,buff))
                 #print("specialMessageSender -> buff: {}".format(buff))  
-                canSend_ordered.put((data_router_dict[infoMessage_name[i]]["priority"],[(int(data_router_dict[infoMessage_name[i]]["can_id"],base=16),byteArrayProducer(format(int(buff,base=2),'0>16x')))])) ### infox are the buff for the 3 messages to be completed in "val_imm" checkswap_byte_order(int(buff, base=16))
+                canSend_ordered.put((data_router_dict[infoMessage_name[i]]["priority"],[(int(data_router_dict[infoMessage_name[i]]["can_id"],base=16),swap_byte_order_tolist(format(int(buff,base=2),'0>16x')))])) ### infox are the buff for the 3 messages to be completed in "val_imm" checkswap_byte_order_tolist(int(buff, base=16))
                 infoMessage[i] = data_router_dict[infoMessage_name[i]]["data_list"]
             
 
 def eventFactAct(msg):
     '''This function extracts the data from the buffer and produces the Activations stats'''
     
-    return swap_byte_order(msg)
+    return swap_byte_order_tolist(msg)
 
 
 def eventFactVar(msg):
     '''This function extracts the data from the buffer and produces the Variations stats'''
-    return swap_byte_order(msg)
+    return swap_byte_order_tolist(msg)
 
 
 def eventFactNone(msg):
     '''This function extracts the data from the buffer and produces the None stats'''
 
-    return swap_byte_order(msg[0:4]),swap_byte_order(msg[4:8]),swap_byte_order(msg[8:])
+    return swap_byte_order_tolist(msg[0:4]),swap_byte_order_tolist(msg[4:8]),swap_byte_order_tolist(msg[8:])
 
 
 def eventFactStat(msg):
     '''This function extracts the data from the buffer and produces the Statistics stats'''
 
-    return swap_byte_order(msg[0:8]), swap_byte_order(msg[8:16]), swap_byte_order(msg[16:20]), swap_byte_order(msg[20:24]) #sum_value, sum2_value, min_value, max_value
+    return swap_byte_order_tolist(msg[0:8]), swap_byte_order_tolist(msg[8:16]), swap_byte_order_tolist(msg[16:20]), swap_byte_order_tolist(msg[20:24]) #sum_value, sum2_value, min_value, max_value
 
 def eventFactCount(msg):
     '''This function extracts the data from the buffer and produces the Counts stats'''
@@ -594,7 +594,7 @@ def eventFactCount(msg):
 
     for i in range(15,-1,-1):
         if mask_bin[i] == '1':
-            buff.append(swap_byte_order(msg[:4]))
+            buff.append(swap_byte_order_tolist(msg[:4]))
             msg = msg[4:]
         else:
             buff.append([0,0])
@@ -603,11 +603,19 @@ def eventFactCount(msg):
     return buff, end_val
 
 
-def swap_byte_order(msg):
+def swap_byte_order_tolist(msg):
     ''' this for cycle extracts the bytes from the data field and it appends them in little-endian order inside the list for the can send'''
     buff= []
     for i in range(len(msg)-1,0,-2):                   
         buff.append(int(msg[i-1:i+1],base=16))
+
+    return buff
+
+def swap_byte_order_tostr(msg):
+    '''This for cycle extracts the bytes from the data field and it appends in swapped order insife a string in hex format'''
+    buff = ""
+    for i in range(len(msg)-1,0,-2):
+        buff += msg[i-1:i+1]
 
     return buff
 
